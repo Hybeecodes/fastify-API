@@ -15,7 +15,20 @@ const routes = [
         method: 'POST',
         url: '/api/cars',
         handler: carController.addCar,
-        // schema: documentation.addCarSchema
+        schema: {
+            description: 'add new car',
+            tags: ['user', 'code'],
+            summary: 'Add New Car',
+            params: {
+              type: 'object',
+              properties: {
+                id: {
+                  type: 'string',
+                  description: 'user id'
+                }
+              }
+            }
+        }
       },
       {
         method: 'PUT',
